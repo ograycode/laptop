@@ -10,3 +10,9 @@ package {'git':
 package {'openjdk-7-jdk':
   ensure => 'latest'
 }
+
+package {'elementary-tweaks':}
+
+package {'elementary-plank-themes':}
+
+package {'elementary-lion-theme':}
