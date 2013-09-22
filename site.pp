@@ -6,3 +6,7 @@ file {'/etc/hostname':
 package {'git':
   ensure => 'latest'
 }
+
+package {'openjdk-7-jdk':
+  ensure => 'latest'
+}
