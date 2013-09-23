@@ -1,3 +1,5 @@
+include apt
+
 file {'/etc/hostname':
   ensure => file,
   content => 'monster-island'
@@ -11,8 +13,14 @@ package {'openjdk-7-jdk':
   ensure => 'latest'
 }
 
-package {'elementary-tweaks':}
+package {'firefox':}
 
-package {'elementary-plank-themes':}
-
-package {'elementary-lion-theme':}
+if $lsbdistid == 'elementary OS' {
+  apt::ppa {'ppa:versable/elementary-update':}
+  ->
+  package {'elementary-tweaks':}
+  ->
+  package {'elementary-plank-themes':}
+  ->
+  package {'elementary-lion-theme':}
+}
