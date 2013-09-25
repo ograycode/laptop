@@ -19,11 +19,12 @@ apt::source { 'spotify':
   location => 'http://repository.spotify.com',
   release => 'stable',
   repos => 'non-free',
-  key => '94558F59',
-  key_server => 'keyserver.ubuntu.com',
 }
 ->
-package {'spotify-client':}
+exec {'install spotify':
+  command => 'sudo apt-get --force-yes -y install spotify-client',
+  path => '/usr/bin',
+}
 
 if $lsbdistid == 'elementary OS' {
   apt::ppa {'ppa:versable/elementary-update':}
