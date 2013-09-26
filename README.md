@@ -9,5 +9,5 @@ Usage
 -----
 1. sudo apt-get install -y git
 2. git clone https://www.github.com/ograycode/laptop
-3. cd /laptop
-4. sudo bootstrap.sh
+3. cd laptop
+4. sudo ./bootstrap.sh
