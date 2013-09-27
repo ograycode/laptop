@@ -1,4 +1,7 @@
 apt-get update
+apt-get -y install git
+git clone https://github.com/ograycode/laptop.git
+cd laptop/
 apt-get -y install puppetmaster
 wget -nc http://forge.puppetlabs.com/puppetlabs/apt/1.3.0.tar.gz
 tar -zxvf 1.3.0.tar.gz
