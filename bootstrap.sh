@@ -8,3 +8,5 @@ tar -zxvf 4.1.0.tar.gz
 mv puppetlabs-stdlib-4.1.0 /etc/puppet/modules/stdlib
 cp site.pp /etc/puppet/manifests/site.pp
 puppet apply /etc/puppet/manifests/site.pp
+rm -r ~/.config/plank/dock1
+cp -a files/dock1 ~/.config/plank
