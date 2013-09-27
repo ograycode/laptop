@@ -14,6 +14,8 @@ package {'openjdk-7-jdk':
 }
 
 package {'firefox':}
+package {'ubuntu-restricted-extras':}
+package {'steam-launcher':}
 
 apt::source { 'spotify':
   location => 'http://repository.spotify.com',
@@ -25,6 +27,10 @@ exec {'install spotify':
   command => 'sudo apt-get --force-yes -y install spotify-client',
   path => '/usr/bin',
 }
+
+apt::ppa {'ppa:webupd8team/sublime-text-3':}
+->
+package {'sublime-text-installer':}
 
 if $lsbdistid == 'elementary OS' {
   apt::ppa {'ppa:versable/elementary-update':}
