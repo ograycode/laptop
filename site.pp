@@ -41,6 +41,10 @@ apt::ppa {'ppa:webupd8team/sublime-text-3':}
 ->
 package {'sublime-text-installer':}
 
+apt::ppa {'ppa:ehoover/compholio':}
+->
+package {'netflix-desktop':}
+
 if $lsbdistid == 'elementary OS' {
   apt::ppa {'ppa:versable/elementary-update':}
   ->
