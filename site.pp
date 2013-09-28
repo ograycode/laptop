@@ -15,7 +15,6 @@ package {'openjdk-7-jdk':
 
 package {'firefox':}
 package {'ubuntu-restricted-extras':}
-package {'steam-launcher':}
 
 apt::source { 'spotify':
   location => 'http://repository.spotify.com',
@@ -27,6 +26,16 @@ exec {'install spotify':
   command => 'sudo apt-get --force-yes -y install spotify-client',
   path => '/usr/bin',
 }
+
+apt::source {'steam-repo':
+  location => 'http://repo.steampowered.com/steam/',
+  release => 'precise',
+  repos => 'steam',
+  key => 'B05498B7',
+  key_server => 'keyserver.ubuntu.com'
+}
+->
+package {'steam':}
 
 apt::ppa {'ppa:webupd8team/sublime-text-3':}
 ->
