@@ -35,7 +35,7 @@ apt::source {'steam-repo':
 ->
 exec {'install steam':
   command => 'sudo apt-get --force-yes -y install steam',
-  path => 'usr/bin',
+  path => '/usr/bin',
 }
 
 apt::ppa {'ppa:webupd8team/sublime-text-3':}
