@@ -31,11 +31,12 @@ apt::source {'steam-repo':
   location => 'http://repo.steampowered.com/steam/',
   release => 'precise',
   repos => 'steam',
-  key => 'B05498B7',
-  key_server => 'keyserver.ubuntu.com'
 }
 ->
-package {'steam':}
+exec {'install steam':
+  command => 'sudo apt-get --force-yes -y install steam',
+  path => 'usr/bin',
+}
 
 apt::ppa {'ppa:webupd8team/sublime-text-3':}
 ->
