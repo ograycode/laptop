@@ -46,6 +46,15 @@ apt::ppa {'ppa:ehoover/compholio':}
 ->
 package {'netflix-desktop':}
 
+exec { "accept-msttcorefonts-license":
+  command => "/bin/sh -c \"echo ttf-mscorefonts-installer msttcorefonts/accepted-     mscorefonts-eula select true | debconf-set-selections\""
+}
+
+package { "msttcorefonts":
+  ensure  => installed,
+  require => Exec['accept-msttcorefonts-license']
+}
+
 if $lsbdistid == 'elementary OS' {
   apt::ppa {'ppa:versable/elementary-update':}
   ->
