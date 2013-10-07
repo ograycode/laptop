@@ -42,7 +42,9 @@ apt::ppa {'ppa:webupd8team/sublime-text-3':}
 ->
 package {'sublime-text-installer':}
 
-apt::ppa {'ppa:ehoover/compholio':}
+apt::ppa {'ppa:ehoover/compholio':
+  require => Package['msttcorefonts'],
+}
 ->
 package {'netflix-desktop':}
 
