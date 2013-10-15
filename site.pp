@@ -49,7 +49,7 @@ apt::ppa {'ppa:ehoover/compholio':
 package {'netflix-desktop':}
 
 exec { "accept-msttcorefonts-license":
-  command => "/bin/sh -c \"echo ttf-mscorefonts-installer msttcorefonts/accepted-     mscorefonts-eula select true | debconf-set-selections\""
+  command => "/bin/sh -c \"echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections\""
 }
 
 package { "msttcorefonts":
