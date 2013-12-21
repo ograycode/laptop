@@ -15,6 +15,8 @@ package {'openjdk-7-jdk':
 
 package {'firefox':}
 package {'ubuntu-restricted-extras':}
+package {'python-django':}
+package {'python-pip':}
 
 apt::source { 'spotify':
   location => 'http://repository.spotify.com',
